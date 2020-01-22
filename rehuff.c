@@ -91,6 +91,7 @@ int main(int argc, char **argv)
 	if (header2_recode(&op_in, &op_out, &headers) < 0)
 		exit(1);
 	sogg_write(&sogg_out, &op_out);
+	sogg_flush(&sogg_out);
 
 	while (sogg_read(&sogg_in, &op_in)) {
 		recode_packet(&op_in, &op_out, &headers);
