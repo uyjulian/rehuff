@@ -275,11 +275,11 @@ int header2_recode(ogg_packet *op_in, ogg_packet *op_out, struct headers *header
 		recode_residue(&ob_in, &ob_out, headers->residue + i);
 
 	oggpack_copy(&ob_in, &ob_out, 6);
-	for (i = 0; i < headers->mappings; i++);
+	for (i = 0; i < headers->mappings; i++)
 		recode_mapping(&ob_in, &ob_out, headers->mapping + i, headers);
 
 	oggpack_copy(&ob_in, &ob_out, 6);
-	for (i = 0; i < headers->modes; i++);
+	for (i = 0; i < headers->modes; i++)
 		recode_mode(&ob_in, &ob_out, headers->mode + i);
 
 	oggpack_copy(&ob_in, &ob_out, 1);

@@ -118,7 +118,7 @@ static void calc_new_length(struct book *book, long *count)
 	if (heap.n) {
 		for (i = 0; i < 2*book->n-1; i++)
 			length[i] = -1;
-		length[heap.x[1]] = 0;
+		length[heap.x[1]] = (heap.x[1] < book->n ? 1 : 0);
 	}
 
 	book->new_length = malloc(book->n * sizeof(*book->new_length));
